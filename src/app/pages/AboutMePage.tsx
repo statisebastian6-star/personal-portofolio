@@ -43,7 +43,7 @@ export function AboutMePage() {
           <div className="space-y-6">
             <div>
               <h3 className="mb-2">BTEC Level 2 Information and Creative Technology (Web)</h3>
-              <p className="text-[#4A4A4A] mb-3">Your College Name • 2024 - 2026</p>
+              <p className="text-[#4A4A4A] mb-3">Uxbridge College • 2025 - 2026</p>
               <p className="text-sm leading-relaxed">
                 Comprehensive course covering web design fundamentals, front-end development (HTML, CSS, JavaScript),
                 database systems (SQL), and software development principles. Includes practical coursework building
