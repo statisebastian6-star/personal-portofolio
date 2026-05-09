@@ -6,10 +6,11 @@ import cardRenderingImg from "../../imports/image-9.png";
 import searchFilterImg from "../../imports/image-10.png";
 import craftingTreeImg from "../../imports/image-11.png";
 import tabbedNavImg from "../../imports/image-12.png";
+import flowchartImg from "../../imports/image-3.png";
 
 export function WebDevelopmentPage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Web Development</h1>
         <p className="text-lg max-w-3xl">
@@ -17,17 +18,17 @@ export function WebDevelopmentPage() {
         </p>
       </div>
 
-      <section className="mb-20">
+      <section className="mb-12 md:mb-20">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 rounded-full bg-[#548235]"></div>
           <h2>Interactive Features – HugPups</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           HugPups is an 8-page therapy dog visitation website built in plain HTML, CSS and JavaScript with no frameworks. I deliberately wrote the code with inline comments throughout so the codebase doubles as a learning reference. Below are two of the main interactive features I built into the site: comprehensive form validation and dynamic content injection.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Form Validation</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
               <ImageWithFallback
@@ -68,7 +69,7 @@ export function WebDevelopmentPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Dynamic Comment Injection</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -104,7 +105,7 @@ grid.scrollIntoView({ behavior: "smooth" });`}</code></pre>
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Custom Email Validation</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -138,7 +139,7 @@ function isValidEmail(email) {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Data-Driven Card Rendering</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -179,17 +180,17 @@ function isValidEmail(email) {
         </div>
       </section>
 
-      <section className="mb-20">
+      <section className="mb-12 md:mb-20">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 rounded-full bg-[#FF7F50]"></div>
           <h2>Interactive Features – Rust Toolkit</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           The Rust Toolkit is a multi-page interactive encyclopedia for the survival game Rust. From a web development perspective it features a searchable items database, a recursive crafting tree, a raid cost calculator, and tab-based navigation. I designed the structure and used AI assistance for parts of the JavaScript implementation, treating AI as a development tool similar to Stack Overflow or documentation.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Search and Filter</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -221,7 +222,7 @@ const filteredItems = useMemo(() => {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Recursive Crafting Tree</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -265,7 +266,7 @@ const buildTree = (itemId: string, quantity = 1, depth = 0): TreeNode[] => {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Tabbed Navigation</h3>
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
               <ImageWithFallback
@@ -307,6 +308,58 @@ return (
             </div>
             <p className="text-sm">
               A consistent top navigation bar across every page of the toolkit, with the active page highlighted in the orange accent colour. Built using shared HTML/CSS components and a small piece of JavaScript that adds an active class to the current page's link.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-12 md:mb-20">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-3 h-3 rounded-full bg-[#548235]"></div>
+          <h2>Logic Flowchart – Comment Submission</h2>
+        </div>
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
+          A flowchart mapping the logic behind the HugPups testimonial submission feature. It shows how the system handles the full process — from the user clicking submit, through field validation, to either displaying an error message or injecting the new comment into the page and clearing the form.
+        </p>
+        <div className="bg-white border border-black/10 rounded-lg p-6">
+          <div className="bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+            <ImageWithFallback
+              src={flowchartImg}
+              alt="Comment submission logic flowchart"
+              className="max-w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-3 h-3 rounded-full bg-[#FF7F50]"></div>
+          <h2>Code Quality and Approach</h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white border border-black/10 rounded-lg p-6">
+            <h3 className="mb-3">Inline Comments</h3>
+            <p className="text-sm">
+              All JavaScript files include inline comments explaining what each function does, so the code can be revisited as a learning reference.
+            </p>
+          </div>
+          <div className="bg-white border border-black/10 rounded-lg p-6">
+            <h3 className="mb-3">Vanilla JavaScript</h3>
+            <p className="text-sm">
+              HugPups is built without frameworks or libraries, evidencing fundamental skills before relying on abstractions.
+            </p>
+          </div>
+          <div className="bg-white border border-black/10 rounded-lg p-6">
+            <h3 className="mb-3">AI-Assisted Development</h3>
+            <p className="text-sm">
+              Rust Toolkit uses AI assistance for implementation while design and architecture remain my decisions, evidencing a modern developer workflow.
+            </p>
+          </div>
+          <div className="bg-white border border-black/10 rounded-lg p-6">
+            <h3 className="mb-3">Mobile Responsive</h3>
+            <p className="text-sm">
+              Both projects are tested across desktop, tablet and mobile breakpoints to ensure features work on every device.
             </p>
           </div>
         </div>

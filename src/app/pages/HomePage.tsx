@@ -5,9 +5,9 @@ import profilePhoto from "../../imports/Profile_foto.png";
 
 export function HomePage() {
   return (
-    <div className="max-w-7xl mx-auto px-8">
-      <section className="py-20 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <section className="py-12 md:py-32">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gray-200">
               <ImageWithFallback
