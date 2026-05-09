@@ -4,7 +4,7 @@ import rustToolkitImg from "../../imports/image.png";
 
 export function WebDesignPage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Web Design</h1>
         <p className="text-lg max-w-3xl">
@@ -12,8 +12,8 @@ export function WebDesignPage() {
         </p>
       </div>
 
-      <section className="mb-20">
-        <h2 className="mb-8">Wireframes & Mockups</h2>
+      <section className="mb-12 md:mb-20">
+        <h2 className="mb-6 md:mb-8">Wireframes & Mockups</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <div className="bg-white border-4 border-[#548235] rounded-lg overflow-hidden">
@@ -47,9 +47,9 @@ export function WebDesignPage() {
         </div>
       </section>
 
-      <section className="mb-20">
-        <h2 className="mb-8">Colour Schemes</h2>
-        <div className="grid md:grid-cols-2 gap-12">
+      <section className="mb-12 md:mb-20">
+        <h2 className="mb-6 md:mb-8">Colour Schemes</h2>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-[#548235]"></div>
@@ -126,8 +126,8 @@ export function WebDesignPage() {
         </div>
       </section>
 
-      <section className="mb-20">
-        <h2 className="mb-8">Typography</h2>
+      <section className="mb-12 md:mb-20">
+        <h2 className="mb-6 md:mb-8">Typography</h2>
         <div className="bg-white border border-black/10 rounded-lg p-8 space-y-6">
           <div>
             <p className="text-sm text-[#4A4A4A] mb-2">Primary Font</p>

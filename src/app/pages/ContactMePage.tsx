@@ -71,7 +71,7 @@ export function ContactMePage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Contact Me</h1>
         <p className="text-lg max-w-3xl">
@@ -80,7 +80,7 @@ export function ContactMePage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-16">
+      <div className="grid md:grid-cols-2 gap-10 md:gap-16">
         <div>
           <h2 className="mb-8">Send a Message</h2>
 

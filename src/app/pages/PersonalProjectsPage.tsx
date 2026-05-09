@@ -24,7 +24,7 @@ const projects = [
 
 export function PersonalProjectsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Personal Projects</h1>
         <p className="text-lg max-w-3xl">

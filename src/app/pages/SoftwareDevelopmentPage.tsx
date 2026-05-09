@@ -3,7 +3,7 @@ import bmiAppImg from "../../imports/image-14.png";
 
 export function SoftwareDevelopmentPage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Software Development</h1>
         <p className="text-lg max-w-3xl">
@@ -11,12 +11,12 @@ export function SoftwareDevelopmentPage() {
         </p>
       </div>
 
-      <section className="mb-20">
+      <section className="mb-12 md:mb-20">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 rounded-full bg-[#17B3A6]"></div>
           <h2>BMI Calculator – Python</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           A BMI Calculator I built in Python from scratch as part of my portfolio work. The program asks the user for their height and weight, validates the input defensively against common error cases (non-numeric input, zero, negative numbers), calculates BMI using the standard formula, classifies the result into one of four health categories, and lets the user run multiple calculations in one session. I chose this project because it connects to my personal interest in fitness and weight training, and because it lets me evidence a wide range of software thinking concepts in around 50 lines of code.
         </p>
 
@@ -31,7 +31,7 @@ export function SoftwareDevelopmentPage() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Defensive Input Validation</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`def get_valid_number(prompt):
@@ -52,7 +52,7 @@ export function SoftwareDevelopmentPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Conditional Category Logic</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`def get_category(bmi):
@@ -71,7 +71,7 @@ export function SoftwareDevelopmentPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>Main Program Loop</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`# Loop so the user can do multiple calculations

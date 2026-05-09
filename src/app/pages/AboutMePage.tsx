@@ -3,10 +3,10 @@ import profilePhoto from "../../imports/Profile_foto.png";
 
 export function AboutMePage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
-      <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12 md:mb-20">
         <div className="flex justify-center">
-          <div className="w-80 h-80 rounded-full overflow-hidden bg-gray-200">
+          <div className="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden bg-gray-200">
             <ImageWithFallback
               src={profilePhoto}
               alt="Profile Photo"
@@ -37,8 +37,8 @@ export function AboutMePage() {
         </div>
       </div>
 
-      <section className="mb-20">
-        <h2 className="mb-8">Education</h2>
+      <section className="mb-12 md:mb-20">
+        <h2 className="mb-6 md:mb-8">Education</h2>
         <div className="bg-white border border-black/10 rounded-lg p-8">
           <div className="space-y-6">
             <div>
@@ -83,8 +83,8 @@ export function AboutMePage() {
         </div>
       </section>
 
-      <section className="mb-20">
-        <h2 className="mb-8">Skills & Technologies</h2>
+      <section className="mb-12 md:mb-20">
+        <h2 className="mb-6 md:mb-8">Skills & Technologies</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white border border-black/10 rounded-lg p-6">
             <h3 className="mb-4">Front-End Development</h3>

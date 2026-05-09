@@ -1,10 +1,10 @@
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import erdImg from "../../imports/image-15.png";
-import testPlanImg from "../../imports/image-16.png";
+import testPlanImg from "../../imports/image-2.png";
 
 export function DatabaseDevelopmentPage() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
       <div className="mb-12">
         <h1 className="mb-4">Database Development</h1>
         <p className="text-lg max-w-3xl">
@@ -12,31 +12,31 @@ export function DatabaseDevelopmentPage() {
         </p>
       </div>
 
-      <section className="mb-20">
+      <section className="mb-12 md:mb-20">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 rounded-full bg-[#E8B923]"></div>
           <h2>Library Database – Validation Test Plan</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           A formal validation test plan I produced as part of my database coursework, documenting how the Library Management Database should respond to a wide range of inputs across three tables (Books, Students, Loans). The test plan uses a 6-column format covering test ID, what is being tested, test data, expected result, actual result, and pass/fail status. It tests valid inputs alongside invalid cases — empty fields, wrong data types, and invalid record IDs — to evidence that the system handles user errors correctly.
         </p>
         <div className="bg-white border border-black/10 rounded-lg p-6">
-          <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+          <div className="bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
             <ImageWithFallback
               src={testPlanImg}
               alt="Library Database validation test plan"
-              className="max-w-full max-h-full object-contain"
+              className="max-w-full h-auto object-contain"
             />
           </div>
         </div>
       </section>
 
-      <section className="mb-20">
+      <section className="mb-12 md:mb-20">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-3 h-3 rounded-full bg-[#FF6B5B]"></div>
           <h2>Entity Relationship Diagram</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           An Entity Relationship Diagram for the Library Management Database, showing the three tables, their fields, primary keys, foreign keys, and the relationships between them. The diagram makes the schema readable at a glance without having to inspect any code: a Student can borrow many Books over time through the Loans table, which acts as the linking entity between them.
         </p>
         <div className="bg-white border border-black/10 rounded-lg p-6">
@@ -55,12 +55,12 @@ export function DatabaseDevelopmentPage() {
           <div className="w-3 h-3 rounded-full bg-[#17B3A6]"></div>
           <h2>SQL Code Examples</h2>
         </div>
-        <p className="text-lg mb-8 max-w-3xl">
+        <p className="text-lg mb-6 md:mb-8 max-w-3xl">
           SQL code I have written for the Library Management Database based on the test plan and ERD. The examples below cover the three most common types of database operations: defining the structure (CREATE TABLE), populating it with data (INSERT INTO), and retrieving information from across multiple tables (SELECT with JOIN).
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>CREATE TABLE Statements</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`-- Create the Books table
@@ -101,7 +101,7 @@ CREATE TABLE Loans (
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>INSERT Statements</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`-- Insert sample books
@@ -139,7 +139,7 @@ VALUES (3, 3, 1, DATE '2026-05-01', DATE '2026-05-15', NULL);`}</code></pre>
             </p>
           </div>
 
-          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4">
+          <div className="bg-white border border-black/10 rounded-lg p-6 space-y-4 min-w-0">
             <h3>SELECT Queries with JOINs</h3>
             <div className="bg-[#282C34] rounded-lg p-4 overflow-x-auto">
               <pre className="text-xs text-white font-mono leading-relaxed"><code>{`-- Query 1: List all currently active loans with student and book details
