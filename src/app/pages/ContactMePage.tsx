@@ -13,6 +13,8 @@ export function ContactMePage() {
     message: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = () => {
     const newErrors = {
@@ -48,17 +50,40 @@ export function ContactMePage() {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError("");
 
     if (validateForm()) {
-      console.log("Form submitted:", formData);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("/__forms.html", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            "form-name": "contact",
+            subject: "New contact form message from %{formName}",
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }).toString(),
+        });
 
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+        if (!response.ok) {
+          throw new Error("Submission failed");
+        }
+
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } catch {
+        setSubmitError("Something went wrong. Please try again or email me directly.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -90,7 +115,27 @@ export function ContactMePage() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {submitError && (
+            <div className="mb-6 p-4 bg-[#FF6B5B]/10 border border-[#FF6B5B] rounded-lg">
+              <p className="text-[#FF6B5B]">{submitError}</p>
+            </div>
+          )}
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="subject" value="New contact form message from %{formName}" />
+            <p style={{ display: "none" }}>
+              <label>
+                Don't fill this out: <input name="bot-field" />
+              </label>
+            </p>
             <div>
               <label htmlFor="name" className="block mb-2">
                 Name <span className="text-[#FF6B5B]">*</span>
@@ -153,9 +198,10 @@ export function ContactMePage() {
 
             <button
               type="submit"
-              className="w-full px-8 py-3 bg-black text-white rounded-lg hover:bg-black/80 transition-colors"
+              disabled={isSubmitting}
+              className="w-full px-8 py-3 bg-black text-white rounded-lg hover:bg-black/80 transition-colors disabled:opacity-50"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
