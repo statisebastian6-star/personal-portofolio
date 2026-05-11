@@ -14,6 +14,8 @@ export function HomePage() {
                 src={profilePhoto}
                 alt="Profile Photo"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

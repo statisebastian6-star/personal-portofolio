@@ -1,13 +1,15 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/HomePage";
-import { PersonalProjectsPage } from "./pages/PersonalProjectsPage";
-import { WebDesignPage } from "./pages/WebDesignPage";
-import { WebDevelopmentPage } from "./pages/WebDevelopmentPage";
-import { SoftwareDevelopmentPage } from "./pages/SoftwareDevelopmentPage";
-import { DatabaseDevelopmentPage } from "./pages/DatabaseDevelopmentPage";
-import { AboutMePage } from "./pages/AboutMePage";
-import { ContactMePage } from "./pages/ContactMePage";
+
+const PersonalProjectsPage = lazy(() => import("./pages/PersonalProjectsPage").then(m => ({ default: m.PersonalProjectsPage })));
+const WebDesignPage = lazy(() => import("./pages/WebDesignPage").then(m => ({ default: m.WebDesignPage })));
+const WebDevelopmentPage = lazy(() => import("./pages/WebDevelopmentPage").then(m => ({ default: m.WebDevelopmentPage })));
+const SoftwareDevelopmentPage = lazy(() => import("./pages/SoftwareDevelopmentPage").then(m => ({ default: m.SoftwareDevelopmentPage })));
+const DatabaseDevelopmentPage = lazy(() => import("./pages/DatabaseDevelopmentPage").then(m => ({ default: m.DatabaseDevelopmentPage })));
+const AboutMePage = lazy(() => import("./pages/AboutMePage").then(m => ({ default: m.AboutMePage })));
+const ContactMePage = lazy(() => import("./pages/ContactMePage").then(m => ({ default: m.ContactMePage })));
 
 export const router = createBrowserRouter([
   {

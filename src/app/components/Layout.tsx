@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Link, Outlet, useLocation } from "react-router";
 import { Github, Linkedin, Instagram, Menu, X } from "lucide-react";
+import { ScrollToTop } from "./ScrollToTop";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -29,8 +30,10 @@ export function Layout() {
   };
 
   return (
+    <>
+      <ScrollToTop />
     <div className="min-h-screen flex flex-col">
-      <header className="py-4 px-4 md:py-6 md:px-8 border-b border-black/10">
+      <header className="sticky top-0 z-50 bg-[#FAF8F3]/95 backdrop-blur-md py-4 px-4 md:py-6 md:px-8 border-b border-black/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <span className="text-xl font-bold text-black">Sebastian Stati</span>
@@ -61,7 +64,7 @@ export function Layout() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-2 border-t border-black/10 pt-4">
+          <nav className="md:hidden mt-4 pb-2 border-t border-black/10 pt-4 bg-[#FAF8F3]">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -82,14 +85,16 @@ export function Layout() {
       </header>
 
       <main className="flex-1">
-        <Outlet />
+        <Suspense fallback={<div className="flex items-center justify-center py-20"><div className="w-8 h-8 border-2 border-black/20 border-t-black rounded-full animate-spin" /></div>}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <footer className="bg-black text-white py-8 px-4 md:py-12 md:px-8 mt-12 md:mt-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h4 className="text-white mb-3">Phone</h4>
-            <p className="text-sm text-gray-300">07407299421</p>
+            <a href="tel:+447407299421" className="text-sm text-gray-300 hover:text-white transition-colors">+44 7407 299 421</a>
           </div>
           <div>
             <h4 className="text-white mb-3">Email</h4>
@@ -111,10 +116,10 @@ export function Layout() {
           </div>
           <div>
             <p className="text-sm text-gray-300">&copy; 2026 Sebastian Stati</p>
-            <p className="text-xs text-gray-400 mt-1">Powered by Wix</p>
           </div>
         </div>
       </footer>
     </div>
+    </>
   );
 }
