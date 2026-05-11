@@ -126,6 +126,16 @@
     @apply bg-background text-foreground;
   }
 
+  header[class*="sticky"] {
+    will-change: transform;
+    contain: layout style;
+  }
+
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
+  }
+
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.

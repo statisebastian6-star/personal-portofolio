@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram, Download } from "lucide-react";
 
 export function ContactMePage() {
   const [formData, setFormData] = useState({
@@ -273,6 +273,21 @@ export function ContactMePage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="bg-[#17B3A6]/5 border border-[#17B3A6]/20 rounded-lg p-8">
+            <h3 className="mb-3">My Resume</h3>
+            <p className="text-sm text-[#4A4A4A] leading-relaxed mb-5">
+              Download my CV to learn more about my skills, education, and experience.
+            </p>
+            <a
+              href="/Sebastian-Stati-CV.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#17B3A6] text-white rounded-lg hover:bg-[#17B3A6]/80 transition-colors font-medium"
+            >
+              <Download className="w-5 h-5" />
+              Download Resume
+            </a>
           </div>
 
           <div className="bg-white border border-black/10 rounded-lg p-8">
